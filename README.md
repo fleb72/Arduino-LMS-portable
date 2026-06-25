@@ -3,20 +3,22 @@
 Environnement Arduino **entièrement portable**, avec VSCode et arduino-cli.
 
 
-## IMPORTANT — INSTALLATION :
+## IMPORTANT — INSTALLATION
 Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **core** sont préinstallés :
 
-- ID                  Installed  Name
-- arduino:avr         1.8.8      Arduino AVR Boards
-- arduino:renesas_uno 1.6.0      Arduino UNO R4 Boards
-- esp32:esp32         3.3.10     esp32
-- Heltec-esp32:esp32  3.3.8      Heltec ESP32 Series Arduino Develop Environment
+| ID                   | Installed | Name                                           |
+|----------------------|-----------|------------------------------------------------|
+| arduino:avr          | 1.8.8     | Arduino AVR Boards                             |
+| arduino:renesas_uno  | 1.6.0     | Arduino UNO R4 Boards                          |
+| esp32:esp32          | 3.3.10    | esp32                                          |
+| Heltec-esp32:esp32   | 3.3.8     | Heltec ESP32 Series Arduino Develop Environment |
+
  
 Le dossier est archivé avec 7zip (gratuit, extension .7z).
 Prévoyez suffisamment d’espace disque, un temps d'extraction et de copie adapté (clé USB lente = copie longue). Au chapitre 7., vous verrez comment installer ou désinstaller un core selon vos besoins.
 
 Pour que cet environnement fonctionne correctement, vous devez copier le dossier complet "Arduino-LMS-portable" à la racinedu disque C:, de manière à obtenir :
-    - C:\Arduino-LMS-portable\
+`C:\Arduino-LMS-portable\`
 
 Ne pas placer ce dossier dans "Documents", "Téléchargements", "Desktop", un réseau, ou un sous-dossier.  
 Le chemin C:\ est indispensable pour le bon fonctionnement des tâches VS Code et de l’arduino-cli.
@@ -29,12 +31,12 @@ Une fois copié à cet emplacement, tout fonctionne immédiatement.
 Cet environnement utilise **une version portable de VS Code**, déjà configurée pour Arduino CLI.
 
 Vous devez OBLIGATOIREMENT lancer VS Code via :
-- C:\Arduino-LMS-portable\code.exe - Raccourci
+`C:\Arduino-LMS-portable\code.exe - Raccourci`
 
 Ne pas utiliser un VS Code installé ailleurs sur le PC : il ne contient pas les extensions, les chemins, ni les tâches nécessaires au fonctionnement du pack portable.
 
 Une fois VS Code lancé depuis `code.exe`, ouvrez vos sketches (menu File → Open Folder…) dans :
-- C:\Arduino-LMS-portable\arduino-home\sketches\
+`C:\Arduino-LMS-portable\arduino-home\sketches\`
 
 ------------------------------------------------------------
 1. CONTENU DU DOSSIER
