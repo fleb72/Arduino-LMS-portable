@@ -82,8 +82,7 @@ Les bibliothèques installées se trouvent dans :
 ## COMPILER UN PROGRAMME (BUILD) — via VS Code
 
 Chaque sketch possède son propre dossier :
-
-    `C:\Arduino-LMS-portable\arduino-home\sketches\<nom_du_sketch>\.vscode\`
+`C:\Arduino-LMS-portable\arduino-home\sketches\<nom_du_sketch>\.vscode\`
 
 Ce dossier contient :
 - `tasks.json`  → build / upload automatisés
@@ -95,7 +94,7 @@ Ce dossier contient :
 2. Aller dans :  
        Terminal → Run Task…  
 3. Choisir :  
-       Arduino Build  
+       `Arduino Build`  
 4. Le binaire est généré dans :  
        `./build/`
 
@@ -113,14 +112,13 @@ Résultat → la seconde compilation prend environ **40 secondes**.
 
 Conseil : ne supprimez pas le dossier `/build` si vous voulez conserver des compilations rapides.
 
-arduino-cli (https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 2.x pour les cartes ESP32. 
+[Arduino-cli](https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 1.x et 2.x pour les cartes ESP32. 
 Après une première compilation longue (core ESP32 très volumineux), arduino-cli réutilise un cache local et réduit les compilations suivantes à moins d'une minute. L’environnement est portable, reproductible et fonctionne sans installation, ce qui est idéal pour un usage en classe ou sur des PC verrouillés.
 
 ## CONFIGURER LE PORT COM (OBLIGATOIRE AVANT UPLOAD)
 
 Le port COM doit être défini dans le fichier :
-
-    `C:\Arduino-LMS-portable\arduino-home\sketches\<sketch>\.vscode\settings.json`
+`C:\Arduino-LMS-portable\arduino-home\sketches\<sketch>\.vscode\settings.json`
 
 Exemple :
 ```json
@@ -136,7 +134,7 @@ Chaque sketch peut avoir son propre port COM.
 
 
 Brancher la carte USB puis dans VSCode :
-	Terminal → Run Tasks → Arduino : list COM ports
+	Terminal → Run Tasks → Arduino : `list COM ports`
 
 Exemple de résultat :
 
@@ -155,61 +153,57 @@ Une fois le port COM configuré :
 1. Aller dans :  
        Terminal → Run Task…  
 2. Choisir :  
-       Arduino Upload  
+       `Arduino Upload`
 
-------------------------------------------------------------
-5.3 COMPILER + TÉLÉVERSER AUTOMATIQUEMENT
-------------------------------------------------------------
 
-    Terminal → Run Task… → Arduino: Build + Upload
+## COMPILER + TÉLÉVERSER AUTOMATIQUEMENT
+Terminal → Run Task… → `Arduino: Build + Upload`
 
 Cette tâche enchaîne compilation → upload.
 
-------------------------------------------------------------
-6. INSTALLER UNE NOUVELLE BIBLIOTHÈQUE (ZIP)
-------------------------------------------------------------
 
-1) Télécharger le ZIP  
-2) Décompresser  
-3) Renommer le dossier (ex : ArduinoJson)  
-4) Copier dans :  
+## INSTALLER UNE NOUVELLE BIBLIOTHÈQUE (ZIP)
+
+1. Télécharger le ZIP  
+2. Décompresser  
+3. Renommer le dossier (ex : ArduinoJson)  
+4. Copier dans :  
        C:\Arduino-LMS-portable\arduino-home\libraries\
 
-------------------------------------------------------------
-7. INSTALLER UN NOUVEAU CORE (CARTE) / DESINSTALLER
-------------------------------------------------------------
 
-1) Ajouter l’URL du core dans :  
+## INSTALLER UN NOUVEAU CORE (CARTE) / DESINSTALLER
+
+1. Ajouter l’URL du core dans :
+   ```
        C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml
+   ```
 
-2) Mettre à jour l’index (sur 1 ligne) :
-    C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe 
-		--config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml 
-			core update-index
+2. Mettre à jour l’index :
+    ```
+    C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core update-index
+    ```
 
-3) Installer le core (sur 1 ligne) :
-       C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe 
-             --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml 
-                      core install <fabricant:core>
+3. Installer le core :
+   ```
+   C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core install <fabricant:core>
+   ```
 
-Pour désinstaller un core (sur 1 ligne) :
-	C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe 
-		--config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml 
-			core uninstall <fabricant:core>
+4. Pour désinstaller un core :
+   ```
+	C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core uninstall <fabricant:core>
+   ```
 
-------------------------------------------------------------
-8. TESTS FOURNIS
-------------------------------------------------------------
 
-Les sketches de test se trouvent dans :
+## TESTS FOURNIS
 
-    C:\Arduino-LMS-portable\arduino-home\sketches\_tests\
+Les sketches de test se trouvent dans : 
+`C:\Arduino-LMS-portable\arduino-home\sketches\_tests\`
 
 Tests inclus :
-- blink_test\              → Test UNO  
-- uno_r4_wifi_test\        → Test UNO R4 WiFi  
-- lorawan_test\            → Test Heltec LoRa V3
-- esp32_test\		   → Test ESP32 dev module
+- `blink_test\`              → Test UNO  
+- `uno_r4_wifi_test\`        → Test UNO R4 WiFi  
+- `lorawan_test\`            → Test Heltec LoRa V3
+- `esp32_test\`		   → Test ESP32 dev module
 
 ### Structure des sketches de test : .ino vide + code en .cpp
 
@@ -220,76 +214,67 @@ Chaque dossier contient :
 
 ### Pourquoi cette structure ?
 
-Arduino CLI **exige obligatoirement** la présence d’un fichier `.ino`  
-pour considérer un dossier comme un "sketch Arduino".
+Arduino CLI **exige obligatoirement** la présence d’un fichier `.ino` pour considérer un dossier comme un "sketch Arduino".
 
 Mais :
 
 - VS Code fonctionne beaucoup mieux avec un `.cpp` (analyse, autocomplétion…)    
 - Le build compile **tous les .cpp** du dossier automatiquement
 
-Ici, le `.ino` vide sert uniquement de **placeholder** pour Arduino CLI 
+Ici, le `.ino` vide sert uniquement de **placeholder** pour Arduino CLI.
 
 Ces sketchs peuvent servir aussi de *template* pour vos futurs projets.
 
-------------------------------------------------------------
-9. UTILISATION EN LYCÉE
-------------------------------------------------------------
 
-✔ Aucun droit administrateur  
-✔ Aucun accès Internet  
-✔ Aucun fichier dans C:/users/.../AppData  
-✔ Compatible salles informatiques verrouillées  
+## UTILISATION EN ETABLISSEMENT SCOLAIRE
 
-------------------------------------------------------------
-10. POURQUOI CE PROJET EXISTE
-------------------------------------------------------------
+- aucun droit administrateur
+- aucun accès Internet  
+- aucun fichier dans `C:/users/.../AppData`  
+- compatible salles informatiques verrouillées  
 
-Ce pack portable a été conçu pour répondre aux difficultés
-rencontrées dans les établissements scolaires :
 
-• Les compilations lentes ou impossibles  
+## POURQUOI CE PROJET EXISTE
+
+Ce pack portable a été conçu pour répondre aux difficultés rencontrées dans les établissements scolaires :
+
+- Les compilations lentes ou impossibles  
   → Les réseaux des lycées filtrent fortement, ce qui ralentit
     ou bloque les milliers de petits fichiers nécessaires aux
     toolchains Arduino (AVR, ESP32, Renesas…).  
   → Les antivirus scolaires analysent chaque fichier, ce qui
     multiplie les temps de compilation par 5 ou 10.
 
-• Les droits d’accès très limités  
+- Les droits d’accès très limités  
   → Impossible d’installer Arduino IDE ou VS Code.  
   → Impossible d’écrire dans AppData ou Program Files.  
   → Impossible d’installer Python, Git, les drivers, etc.
 
-• Les dépendances qui ne se téléchargent pas  
+- Les dépendances qui ne se téléchargent pas  
   → Les serveurs GitHub, Python.org, AmazonAWS ou Espressif
     sont souvent bloqués par les proxys académiques.  
   → Résultat : PlatformIO ou Arduino IDE ne peuvent pas
     installer les cores, les frameworks ou les toolchains.
 
-• Les environnements qui cassent d’une salle à l’autre  
+- Les environnements qui cassent d’une salle à l’autre  
   → Un PC autorise l’installation, un autre non.  
   → Un antivirus bloque un fichier, un autre le laisse passer.  
   → Les élèves n’ont jamais le même environnement.
 
 Ce pack portable résout ces problèmes :
 
-✔ Aucun droit administrateur  
-✔ Aucun accès Internet  
-✔ Aucun fichier dans AppData  
-✔ Aucun téléchargement de dépendances  
-✔ Tout est préinstallé et reproductible  
-✔ Fonctionne dans toutes les salles, sur tous les PC  
-✔ Copie → Lancez code.exe → Ça marche
+- Aucun droit administrateur  
+- Aucun accès Internet  
+- Aucun fichier dans AppData  
+- Aucun téléchargement de dépendances  
+- Tout est préinstallé et reproductible  
+- Fonctionne dans toutes les salles, sur tous les PC  
+- Copie → Lancez code.exe → Ça marche
 
-Ce projet a été créé pour permettre aux enseignants et aux
-élèves de travailler sereinement, même dans un environnement
-informatique très contraint. Pour un développement "pro", 
-l'environnement est limité, tout comme l'IDE Arduino 
-officiel 1.x ou 2.x l'est.
+Ce projet a été créé pour permettre aux enseignants et aux élèves de travailler sereinement, même dans un environnement informatique très contraint. Pour un développement "pro", l'environnement est limité, tout comme l'IDE Arduino officiel 1.x ou 2.x l'est.
 
-------------------------------------------------------------
-11. CHANGELOG
-------------------------------------------------------------
+## CHANGELOG
+
 v2 — 2026‑06‑22
 - Mise à jour du code lorawan_test
 - Ajout de l’affichage OLED via la librairie U8g2
@@ -299,8 +284,4 @@ v1 — 2026‑06‑21
 - Version initiale d'environnement portable Arduino/ESP32
 - LoRaWAN OTAA fonctionnel, mais pas l'affichage OLED ??
 
-
-============================================================
-FIN DU README
-============================================================
 
