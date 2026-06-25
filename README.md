@@ -41,7 +41,7 @@ Une fois VS Code lancé depuis `code.exe`, ouvrez vos sketches (menu File → Op
 
 ## CONTENU DU DOSSIER
 
-
+```text
 C:\Arduino-LMS-portable\
 │
 ├── arduino-cli\
@@ -63,6 +63,7 @@ C:\Arduino-LMS-portable\
       │
       ├── libraries\
       └── (chaque sketch contient son propre dossier .vscode)
+```
 
 ------------------------------------------------------------
 2. CORES PRÉINSTALLÉS
