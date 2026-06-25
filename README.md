@@ -65,34 +65,29 @@ C:\Arduino-LMS-portable\
       └── (chaque sketch contient son propre dossier .vscode)
 ```
 
-------------------------------------------------------------
-2. CORES PRÉINSTALLÉS
-------------------------------------------------------------
+## CORES PRÉINSTALLÉS
 
-✔ Arduino AVR (arduino:avr)  
-✔ Arduino Renesas UNO (arduino:renesas_uno)  
-✔ Heltec ESP32 (Heltec-esp32:esp32)  
-✔ Espressif ESP32 (esp32:esp32)
+- Arduino AVR (`arduino:avr`)  
+- Arduino Renesas UNO (`arduino:renesas_uno`)  
+- Heltec ESP32 (`Heltec-esp32:esp32`)  
+- Espressif ESP32 (`esp32:esp32`)
 
-------------------------------------------------------------
-3. BIBLIOTHÈQUES PRÉINSTALLÉES
-------------------------------------------------------------
+
+## BIBLIOTHÈQUES PRÉINSTALLÉES
 
 Les bibliothèques installées se trouvent dans :
+    `C:\Arduino-LMS-portable\arduino-home\libraries\`
 
-    C:\Arduino-LMS-portable\arduino-home\libraries\
 
-------------------------------------------------------------
-4. COMPILER UN PROGRAMME (BUILD) — via VS Code
-------------------------------------------------------------
+## COMPILER UN PROGRAMME (BUILD) — via VS Code
 
 Chaque sketch possède son propre dossier :
 
-    C:\Arduino-LMS-portable\arduino-home\sketches\<nom_du_sketch>\.vscode\
+    `C:\Arduino-LMS-portable\arduino-home\sketches\<nom_du_sketch>\.vscode\`
 
 Ce dossier contient :
-- tasks.json  → build / upload automatisés
-- settings.json → port COM spécifique au sketch
+- `tasks.json`  → build / upload automatisés
+- `settings.json` → port COM spécifique au sketch
 
 ### Pour compiler un sketch :
 
@@ -102,67 +97,58 @@ Ce dossier contient :
 3. Choisir :  
        Arduino Build  
 4. Le binaire est généré dans :  
-       ./build/
+       `./build/`
 
 Raccourci : **Ctrl + Shift + B**
 
 ## Pourquoi utiliser arduino-cli ?
 
 Les cores ESP32 pour Arduino sont très volumineux. 
-Lors de la première compilation, l’outil doit construire l’intégralité du core 
-(FreeRTOS, WiFi, Bluetooth, drivers, etc.). Cela peut prendre **jusqu’à 40 minutes** 
-selon la machine.
+Lors de la première compilation, l’outil doit construire l’intégralité du core (FreeRTOS, WiFi, Bluetooth, drivers, etc.). Cela peut prendre **jusqu’à 40 minutes** selon la machine.
 
-Bonne nouvelle : tous les fichiers compilés sont ensuite stockés dans le dossier 
-`/build` du projet. Lors des compilations suivantes, Arduino réutilise ce cache 
+Bonne nouvelle : tous les fichiers compilés sont ensuite stockés dans le dossier `/build` du projet. Lors des compilations suivantes, Arduino réutilise ce cache 
 et ne recompile que le strict nécessaire.
 
 Résultat → la seconde compilation prend environ **40 secondes**.
 
-Conseil : ne supprimez pas le dossier `/build` si vous voulez conserver 
-des compilations rapides.
+Conseil : ne supprimez pas le dossier `/build` si vous voulez conserver des compilations rapides.
 
-arduino-cli (https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide 
-et plus fiable que l’IDE Arduino 2.x pour les cartes ESP32. 
-Après une première compilation longue (core ESP32 très volumineux), arduino-cli réutilise un cache local et réduit les 
-compilations suivantes à moins d'une minute. L’environnement est portable, reproductible et fonctionne sans installation, 
-ce qui est idéal pour un usage en classe ou sur des PC verrouillés.
+arduino-cli (https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 2.x pour les cartes ESP32. 
+Après une première compilation longue (core ESP32 très volumineux), arduino-cli réutilise un cache local et réduit les compilations suivantes à moins d'une minute. L’environnement est portable, reproductible et fonctionne sans installation, ce qui est idéal pour un usage en classe ou sur des PC verrouillés.
 
-------------------------------------------------------------
-5. CONFIGURER LE PORT COM (OBLIGATOIRE AVANT UPLOAD)
-------------------------------------------------------------
+## CONFIGURER LE PORT COM (OBLIGATOIRE AVANT UPLOAD)
 
 Le port COM doit être défini dans le fichier :
 
-    C:\Arduino-LMS-portable\arduino-home\sketches\<sketch>\.vscode\settings.json
+    `C:\Arduino-LMS-portable\arduino-home\sketches\<sketch>\.vscode\settings.json`
 
 Exemple :
-
+```json
 {
     "arduino.port": "COM5"
     ...
 }
-
+```
 Chaque sketch peut avoir son propre port COM.
 
-------------------------------------------------------------
-5.1 TROUVER LE PORT COM AVEC ARDUINO-CLI
-------------------------------------------------------------
+
+## TROUVER LE PORT COM AVEC ARDUINO-CLI
+
 
 Brancher la carte USB puis dans VSCode :
 	Terminal → Run Tasks → Arduino : list COM ports
 
 Exemple de résultat :
 
-Port     Protocol  Board Name  
-COM5     serial    Arduino Uno R4 WiFi
+|Port|     Protocol|  Board Name|
+|----|-------------|------------|
+|COM5|     serial  |  Arduino Uno R4 WiFi|
 
 → Le port est ici **COM5**  
-→ Le reporter dans le settings.json du sketch.
+→ Le reporter dans le `settings.json du sketch`.
 
-------------------------------------------------------------
-5.2 TÉLÉVERSER VIA VS CODE
-------------------------------------------------------------
+
+## TÉLÉVERSER VIA VS CODE
 
 Une fois le port COM configuré :
 
