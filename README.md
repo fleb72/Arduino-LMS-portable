@@ -38,10 +38,10 @@ Ne pas utiliser un VS Code installé ailleurs sur le PC : il ne contient pas les
 Une fois VS Code lancé depuis `code.exe`, ouvrez vos sketches (menu File → Open Folder…) dans :
 `C:\Arduino-LMS-portable\arduino-home\sketches\`
 
-------------------------------------------------------------
-1. CONTENU DU DOSSIER
-------------------------------------------------------------
 
+## CONTENU DU DOSSIER
+
+`
 C:\Arduino-LMS-portable\
 │
 ├── arduino-cli\
@@ -63,7 +63,7 @@ C:\Arduino-LMS-portable\
       │
       ├── libraries\
       └── (chaque sketch contient son propre dossier .vscode)
-
+`
 ------------------------------------------------------------
 2. CORES PRÉINSTALLÉS
 ------------------------------------------------------------
