@@ -5,7 +5,7 @@ Environnement Arduino **entièrement portable**, avec VSCode et arduino-cli.
 ## Téléchargement de l’environnement (version stable)
 
 Seule la dernière version est conservée sur le serveur (espace limité).  
-**Lien de téléchargement :
+**Lien de téléchargement fourni dans les *releases* :
 [https://github.com/fleb72/Arduino-LMS-portable/releases](https://github.com/fleb72/Arduino-LMS-portable/releases)**
 
 ## IMPORTANT — INSTALLATION
