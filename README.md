@@ -28,7 +28,7 @@ Une fois copié à cet emplacement, tout fonctionne immédiatement.
 
 ## LANCER L’ENVIRONNEMENT (IMPORTANT)
 
-Cet environnement utilise **une version portable de VS Code**, déjà configurée pour Arduino CLI.
+Cet environnement utilise **une version portable de VS Code** (v1.125.0), déjà configurée pour Arduino CLI.
 
 Vous devez OBLIGATOIREMENT lancer VS Code via :
 `C:\Arduino-LMS-portable\code.exe - Raccourci`
@@ -171,7 +171,7 @@ Cette tâche enchaîne compilation → upload.
        C:\Arduino-LMS-portable\arduino-home\libraries\
 
 
-## INSTALLER UN NOUVEAU CORE (CARTE) / DESINSTALLER
+## INSTALLER UN NOUVEAU CORE (CARTE) / DÉSINSTALLER
 
 1. Ajouter l’URL du core dans :
    ```
@@ -226,7 +226,7 @@ Ici, le `.ino` vide sert uniquement de **placeholder** pour Arduino CLI.
 Ces sketchs peuvent servir aussi de *template* pour vos futurs projets.
 
 
-## UTILISATION EN ETABLISSEMENT SCOLAIRE
+## UTILISATION EN ÉTABLISSEMENT SCOLAIRE
 
 - aucun droit administrateur
 - aucun accès Internet  
@@ -271,17 +271,11 @@ Ce pack portable résout ces problèmes :
 - Fonctionne dans toutes les salles, sur tous les PC  
 - Copie → Lancez code.exe → Ça marche
 
-Ce projet a été créé pour permettre aux enseignants et aux élèves de travailler sereinement, même dans un environnement informatique très contraint. Pour un développement "pro", l'environnement est limité, tout comme l'IDE Arduino officiel 1.x ou 2.x l'est.
+Ce projet a été créé pour permettre aux enseignants et aux élèves de travailler sereinement, même dans un environnement informatique très contraint.
 
 ## CHANGELOG
 
-v2 — 2026‑06‑22
-- Mise à jour du code lorawan_test
-- Ajout de l’affichage OLED via la librairie U8g2
-- Compatibilité confirmée avec Heltec WiFi LoRa 32 V3.2
-
-v1 — 2026‑06‑21
+v1 — 2026‑06‑26
 - Version initiale d'environnement portable Arduino/ESP32
-- LoRaWAN OTAA fonctionnel, mais pas l'affichage OLED ??
 
 
