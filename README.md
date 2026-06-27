@@ -20,7 +20,7 @@ Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **cores** sont p
 
  
 Le dossier est archivé avec 7zip (gratuit, extension .7z).
-Prévoyez suffisamment d’espace disque, un temps d'extraction et de copie adapté (clé USB lente = copie longue). Au chapitre 7., vous verrez comment installer ou désinstaller un core selon vos besoins.
+Prévoyez suffisamment d’espace disque, un temps d'extraction et de copie adapté (clé USB lente = copie longue). La première tâche avant déploiement consistera à installer ou supprimer des cores selon vos matériels disponibles.
 
 Pour que cet environnement fonctionne correctement, vous devez copier le dossier complet "Arduino-LMS-portable" à la racine du disque C:, de manière à obtenir :
 `C:\Arduino-LMS-portable\`
