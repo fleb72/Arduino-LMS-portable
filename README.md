@@ -9,7 +9,7 @@ Seule la dernière version est conservée sur le serveur (espace limité).
 [https://github.com/fleb72/Arduino-LMS-portable/releases](https://github.com/fleb72/Arduino-LMS-portable/releases)**
 
 ## IMPORTANT — INSTALLATION
-Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **core** sont préinstallés :
+Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **cores** sont préinstallés :
 
 | ID                   | Installed | Name                                           |
 |----------------------|-----------|------------------------------------------------|
@@ -22,7 +22,7 @@ Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **core** sont pr
 Le dossier est archivé avec 7zip (gratuit, extension .7z).
 Prévoyez suffisamment d’espace disque, un temps d'extraction et de copie adapté (clé USB lente = copie longue). Au chapitre 7., vous verrez comment installer ou désinstaller un core selon vos besoins.
 
-Pour que cet environnement fonctionne correctement, vous devez copier le dossier complet "Arduino-LMS-portable" à la racinedu disque C:, de manière à obtenir :
+Pour que cet environnement fonctionne correctement, vous devez copier le dossier complet "Arduino-LMS-portable" à la racine du disque C:, de manière à obtenir :
 `C:\Arduino-LMS-portable\`
 
 Ne pas placer ce dossier dans "Documents", "Téléchargements", "Desktop", un réseau, ou un sous-dossier.  
@@ -33,7 +33,7 @@ Une fois copié à cet emplacement, tout fonctionne immédiatement.
 
 ## LANCER L’ENVIRONNEMENT (IMPORTANT)
 
-Cet environnement utilise **une version portable de VS Code** (v1.125.0), déjà configurée pour Arduino CLI.
+Cet environnement utilise **une version portable de [VS Code](https://code.visualstudio.com/Download)** (v1.125.0), déjà configurée pour Arduino CLI.
 
 Vous devez OBLIGATOIREMENT lancer VS Code via :
 `C:\Arduino-LMS-portable\code.exe - Raccourci`
@@ -67,7 +67,6 @@ C:\Arduino-LMS-portable\
       │     └── (vos futurs sketches ici)
       │
       ├── libraries\
-      └── (chaque sketch contient son propre dossier .vscode)
 ```
 
 ## CORES PRÉINSTALLÉS
@@ -113,7 +112,7 @@ Lors de la première compilation, l’outil doit construire l’intégralité du
 Bonne nouvelle : tous les fichiers compilés sont ensuite stockés dans le dossier `/build` du projet. Lors des compilations suivantes, Arduino réutilise ce cache 
 et ne recompile que le strict nécessaire.
 
-Résultat → la seconde compilation prend environ **40 secondes**.
+Résultat → la seconde compilation prendra moins d'une minute.
 
 Conseil : ne supprimez pas le dossier `/build` si vous voulez conserver des compilations rapides.
 
@@ -177,6 +176,13 @@ Cette tâche enchaîne compilation → upload.
 
 
 ## INSTALLER UN NOUVEAU CORE (CARTE) / DÉSINSTALLER
+
+Pour lister les cores déjà installés :
+    ```
+    C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core list
+    ```
+
+Pour installer/désinstaller un core :
 
 1. Ajouter l’URL du core dans :
    ```
@@ -282,5 +288,3 @@ Ce projet a été créé pour permettre aux enseignants et aux élèves de trava
 
 v1 — 2026‑06‑26
 - Version initiale d'environnement portable Arduino/ESP32
-
-
