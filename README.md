@@ -178,9 +178,10 @@ Cette tâche enchaîne compilation → upload.
 ## INSTALLER UN NOUVEAU CORE (CARTE) / DÉSINSTALLER
 
 Pour lister les cores déjà installés :
-	```
-    	C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core list
-    ```
+
+```
+C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core list
+```
 
 Pour installer/désinstaller un core :
 
