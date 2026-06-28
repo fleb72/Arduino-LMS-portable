@@ -287,15 +287,14 @@ Ce projet a été créé pour permettre aux enseignants et aux élèves de trava
 
 ## CHANGELOG
 
-### v1 — 2026‑06‑26
+#### v1 — 2026‑06‑26
 - Version initiale d'environnement portable Arduino/ESP32
 
-### v1.0.1 — 2026-06-28
+#### v1.0.1 — 2026-06-28
 - Suppression de l’extension C/C++ de Microsoft
 - Amélioration de la portabilité
 - Aucun changement dans le fonctionnement du pack
 
-**Mise à jour pour les utilisateurs existants**
 Si vous utilisez déjà la version 1.0, vous n'avez pas besoin de re‑télécharger les 6 Go.
 Il suffit de supprimer l’extension C/C++ dans VS Code :
 1. Ouvrir VS Code
