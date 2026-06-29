@@ -1,17 +1,17 @@
 # Arduino-LMS-portable
 
-Environnement Arduino **entièrement portable**, avec VSCode et arduino-cli.
+Environnement Arduino **entièrement portable**, avec VSCode et Arduino-CLI.
 
 ## 📦 Téléchargement de l’environnement portable
 
-Le fichier complet (archive `.7z`) est disponible dans la section **Releases** du dépôt :
+Le lien vers le fichier complet (archive `.7z`) est disponible dans la section **Releases** du dépôt :
 
 👉 [https://github.com/fleb72/Arduino-LMS-portable/releases](https://github.com/fleb72/Arduino-LMS-portable/releases)
 
 Seule la **dernière version** est conservée sur le serveur (espace limité).
 
 ## IMPORTANT — INSTALLATION
-Arduino LMS portable existe maintenant enx deux variantes :
+Arduino LMS portable existe maintenant en deux variantes :
 
 **1. Version complète (full)**
 
@@ -191,7 +191,7 @@ Cette tâche enchaîne compilation → upload.
 2. Décompresser  
 3. Renommer le dossier (ex : ArduinoJson)  
 4. Copier dans :  
-       C:\Arduino-LMS-portable\arduino-home\libraries\
+       `C:\Arduino-LMS-portable\arduino-home\libraries\`
 
 
 ## INSTALLER UN NOUVEAU CORE (CARTE) / DÉSINSTALLER
