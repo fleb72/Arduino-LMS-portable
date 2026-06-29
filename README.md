@@ -4,7 +4,7 @@ Environnement Arduino **entièrement portable**, avec VSCode et arduino-cli.
 
 ## 📦 Téléchargement de l’environnement portable
 
-Le fichier complet (archive `.7z`, ~6 Go) est disponible dans la section **Releases** du dépôt :
+Le fichier complet (archive `.7z`) est disponible dans la section **Releases** du dépôt :
 
 👉 [https://github.com/fleb72/Arduino-LMS-portable/releases](https://github.com/fleb72/Arduino-LMS-portable/releases)
 
@@ -14,7 +14,8 @@ Seule la **dernière version** est conservée sur le serveur (espace limité).
 Arduino LMS portable existe maintenant enx deux variantes :
 
 **1. Version complète (full)**
-Pack très volumineux (~18 Go) incluant plusieurs cores préinstallés :
+
+- Pack très volumineux (~18 Go) incluant plusieurs cores préinstallés :
 
 | ID                   | Installed | Name                                           |
 |----------------------|-----------|------------------------------------------------|
@@ -25,8 +26,9 @@ Pack très volumineux (~18 Go) incluant plusieurs cores préinstallés :
 
 Cette version est destinée aux environnements où l’on utilise plusieurs familles de cartes (UNO, UNO R4, ESP32, Heltec, etc.).
 
-**2. Version allégée (light)**
-Pack allégé (~5 Go) contenant uniquement :
+**2. Version légère (light)**
+
+- Pack allégé (~5 Go) contenant uniquement :
 
 | ID                   | Installed | Name                                           |
 |----------------------|-----------|------------------------------------------------|
@@ -72,8 +74,8 @@ C:\Arduino-LMS-portable\
 │     └── data\
 │           └── packages\
 │                ├── arduino\              → Core UNO + UNO R4 WiFi
-│                ├── Heltec-esp32\         → Core Heltec WiFi LoRa 32 V3
-│                └── esp32\                → Core ESP32-WROOM / DevKitC
+│                ├── Heltec-esp32\         → Core Heltec WiFi LoRa 32 V3 (sauf version 'light')
+│                └── esp32\                → Core ESP32-WROOM / DevKitC (sauf version 'light')
 │
 └── arduino-home\
       ├── sketches\	
@@ -90,8 +92,8 @@ C:\Arduino-LMS-portable\
 
 - Arduino AVR (`arduino:avr`)  
 - Arduino Renesas UNO (`arduino:renesas_uno`)  
-- Heltec ESP32 (`Heltec-esp32:esp32`)  
-- Espressif ESP32 (`esp32:esp32`)
+- Heltec ESP32 (`Heltec-esp32:esp32`)	(sauf version 'light')
+- Espressif ESP32 (`esp32:esp32`)		(sauf version 'light')
 
 
 ## BIBLIOTHÈQUES PRÉINSTALLÉES
@@ -231,8 +233,8 @@ Les sketches de test se trouvent dans :
 Tests inclus :
 - `blink_test\`              → Test UNO  
 - `uno_r4_wifi_test\`        → Test UNO R4 WiFi  
-- `lorawan_test\`            → Test Heltec LoRa V3
-- `esp32_test\`		   → Test ESP32 dev module
+- `lorawan_test\`            → Test Heltec LoRa V3 (ne compilera pas avec la version 'light')
+- `esp32_test\`		   → Test ESP32 dev module (ne compilera pas avec la version 'light')
 
 ### Structure des sketches de test : .ino vide + code en .cpp
 
@@ -321,3 +323,5 @@ Il suffit de supprimer l’extension C/C++ dans VS Code :
 
 Votre pack devient identique à la version 1.0.1.
 
+#### v1.0.1 light - 2026-06-29
+- Version allégée (*light*) ne comprenant que les *cores* pour Arduino AVR (Uno/Nano/Mega) et Arduino Renesas (Unor R4 Minima/WiFi).
