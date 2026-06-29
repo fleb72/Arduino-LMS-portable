@@ -11,7 +11,10 @@ Le fichier complet (archive `.7z`, ~6 Go) est disponible dans la section **Relea
 Seule la **dernière version** est conservée sur le serveur (espace limité).
 
 ## IMPORTANT — INSTALLATION
-Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **cores** sont préinstallés :
+Arduino LMS portable existe maintenant enx deux variantes :
+
+**1. Version complète (full)**
+Pack très volumineux (~18 Go) incluant plusieurs cores préinstallés :
 
 | ID                   | Installed | Name                                           |
 |----------------------|-----------|------------------------------------------------|
@@ -20,7 +23,19 @@ Ce pack est TRÈS volumineux : **plus de 18 Go**, car plusieurs **cores** sont p
 | esp32:esp32          | 3.3.10    | esp32                                          |
 | Heltec-esp32:esp32   | 3.3.8     | Heltec ESP32 Series Arduino Develop Environment |
 
- 
+Cette version est destinée aux environnements où l’on utilise plusieurs familles de cartes (UNO, UNO R4, ESP32, Heltec, etc.).
+
+**2. Version allégée (light)**
+Pack allégé (~5 Go) contenant uniquement :
+
+| ID                   | Installed | Name                                           |
+|----------------------|-----------|------------------------------------------------|
+| arduino:avr          | 1.8.8     | Arduino AVR Boards                             |
+| arduino:renesas_uno  | 1.6.0     | Arduino UNO R4 Boards                          |
+
+Idéal pour les établissements scolaires ou les salles informatiques où seules les cartes Arduino officielles sont utilisées.
+
+---
 Le dossier est archivé avec 7zip (gratuit, extension .7z).
 Prévoyez suffisamment d’espace disque, un temps d'extraction et de copie adapté (clé USB lente = copie longue). La première tâche avant déploiement consistera à installer ou supprimer des cores selon vos matériels disponibles.
 
