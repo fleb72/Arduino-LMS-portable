@@ -309,23 +309,27 @@ Il suffit de supprimer l’extension C/C++ dans VS Code :
 
 Votre pack devient identique à la version 1.0.1.
 
-### Arduino LMS portable v1.1 light - 2026-06-30
+#### v1.0.1 light - 2026-06-29
+- Version allégée (*light*) ne comprenant que les *cores* pour Arduino AVR (Uno/Nano/Mega) et Arduino Renesas (Unor R4 Minima/WiFi).
 
-#### Deux nouvelles tâches disponibles dans Terminal -> Run task… :
 
-* Créer un projet UNO/Nano/Mega (AVR)
-* Créer un projet UNO R4 Minima/WiFi (Renesas)
+#### v1.1 light - 2026-06-30
+
+**Deux nouvelles tâches disponibles dans Terminal -> Run task… :**
+
+- Créer un projet UNO/Nano/Mega (AVR)
+- Créer un projet UNO R4 Minima/WiFi (Renesas)
 Dans les deux cas, le nom du projet est à renseigner
-Une fois créé, le projet de destination est dans C:\Arduino-LMS-portable\arduino-home\sketches\projets\<Nom du projet>
+Une fois créé, le projet de destination est dans `C:\Arduino-LMS-portable\arduino-home\sketches\projets\<Nom du projet>`
 
 Chaque projet est prêt à compiler et téléverser via les tâches Arduino habituelles.
 
 \---
 
-#### Améliorations techniques
+**Améliorations techniques**
 
-* Intégration de **Node.js portable** dans `tools/nodejs/` (aucune installation requise).
-* Script `copy-template.js` :
+-  Intégration de **Node.js portable** dans `tools/nodejs/` (aucune installation requise).
+-  Script `copy-template.js` :
 
   * Vérifie l’existence du dossier avant copie.
   * Copie le template depuis `..\arduino-home\sketches\_tests` vers `..\arduino-home\sketches\projets`.
@@ -349,6 +353,3 @@ Arduino-LMS-portable/
 **Fix**
 - Correction de l’apparition du sous‑menu "Continue without scanning the task output" lors de l’exécution des tâches VS Code (`problemMatcher: []` ajouté).
 
-
-#### v1.0.1 light - 2026-06-29
-- Version allégée (*light*) ne comprenant que les *cores* pour Arduino AVR (Uno/Nano/Mega) et Arduino Renesas (Unor R4 Minima/WiFi).
