@@ -157,7 +157,7 @@ Chaque sketch peut avoir son propre port COM.
 
 
 Brancher la carte USB puis dans VSCode :
-	Terminal → Run Tasks → Arduino : `list COM ports`
+	Terminal → Run Tasks → `Arduino : list COM ports`
 
 Exemple de résultat :
 
@@ -166,7 +166,7 @@ Exemple de résultat :
 |COM5|     serial  |  Arduino Uno R4 WiFi|
 
 → Le port est ici **COM5**  
-→ Le reporter dans le `settings.json du sketch`.
+→ Le reporter dans le `settings.json` du sketch.
 
 
 ## TÉLÉVERSER VIA VS CODE
@@ -196,10 +196,12 @@ Cette tâche enchaîne compilation → upload.
 
 ## INSTALLER UN NOUVEAU CORE (CARTE) / DÉSINSTALLER
 
+Les commandes `arduino-cli` ne fonctionnent QUE dans le terminal intégré de VSCode (menu Terminal → New Terminal).
+
 Pour lister les cores déjà installés :
 
 ```
-C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core list
+arduino-cli --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core list
 ```
 
 Pour installer/désinstaller un core :
@@ -211,17 +213,17 @@ Pour installer/désinstaller un core :
 
 2. Mettre à jour l’index :
     ```
-    C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core update-index
+    arduino-cli --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core update-index
     ```
 
 3. Installer le core :
    ```
-   C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core install <fabricant:core>
+   arduino-cli --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core install <fabricant:core>
    ```
 
 4. Pour désinstaller un core :
    ```
-	C:\Arduino-LMS-portable\arduino-cli\arduino-cli.exe --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core uninstall <fabricant:core>
+	arduino-cli --config-file C:\Arduino-LMS-portable\arduino-cli\arduino-cli.yaml core uninstall <fabricant:core>
    ```
 
 
