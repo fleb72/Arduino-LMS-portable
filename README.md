@@ -319,8 +319,9 @@ Votre pack devient identique à la version 1.0.1.
 
 - Créer un projet UNO/Nano/Mega (AVR)
 - Créer un projet UNO R4 Minima/WiFi (Renesas)
-Dans les deux cas, le nom du projet est à renseigner
-Une fois créé, le projet de destination est dans `C:\Arduino-LMS-portable\arduino-home\sketches\projets\<Nom du projet>`
+
+Dans les deux cas, le nom du projet est à renseigner.
+Une fois créé, le projet de destination est dans `C:\Arduino-LMS-portable\arduino-home\sketches\projets\<Nom du projet>`.
 
 Chaque projet est prêt à compiler et téléverser via les tâches Arduino habituelles.
 
