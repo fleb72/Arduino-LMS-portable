@@ -11,31 +11,18 @@ Le lien vers le fichier complet (archive `.7z`) est disponible dans la section *
 Seule la **dernière version** est conservée sur le serveur (espace limité).
 
 ## IMPORTANT — INSTALLATION
-Arduino LMS portable existe maintenant en deux variantes :
+Arduino LMS portable ~~existe maintenant en deux variantes~~ est désormais proposé uniquement en **version light**, optimisée pour les usages pédagogiques en lycée.
 
-**1. Version complète (full)**
+La version *full* (incluant l’ensemble des cores pour Arduino et ESP32) a été retirée et est considérée comme **obsolète** : trop volumineuse, peu utilisée, et non adaptée aux contraintes des postes élèves.
 
-- Pack très volumineux (~18 Go) incluant plusieurs cores préinstallés :
-
-| ID                   | Installed | Name                                           |
-|----------------------|-----------|------------------------------------------------|
-| arduino:avr          | 1.8.8     | Arduino AVR Boards                             |
-| arduino:renesas_uno  | 1.6.0     | Arduino UNO R4 Boards                          |
-| esp32:esp32          | 3.3.10    | esp32                                          |
-| Heltec-esp32:esp32   | 3.3.8     | Heltec ESP32 Series Arduino Develop Environment |
-
-Cette version est destinée aux environnements où l’on utilise plusieurs familles de cartes (UNO, UNO R4, ESP32, Heltec, etc.).
-
-**2. Version légère (light)**
-
-- Pack allégé (~5 Go) contenant uniquement :
+La **Version light** est un pack allégé (~2,3 Go) qui contient les *cores* suivants :
 
 | ID                   | Installed | Name                                           |
 |----------------------|-----------|------------------------------------------------|
 | arduino:avr          | 1.8.8     | Arduino AVR Boards                             |
 | arduino:renesas_uno  | 1.6.0     | Arduino UNO R4 Boards                          |
 
-Idéal pour les établissements scolaires ou les salles informatiques où seules les cartes Arduino officielles sont utilisées.
+Cette version est idéale pour les établissements scolaires ou les salles informatiques où seules les cartes Arduino officielles sont utilisées. Et il est toujours possible d'y installer facilement des cores supplémentaires (ESP32, etc.)
 
 ---
 Le dossier est archivé avec 7zip (gratuit, extension .7z).
@@ -80,10 +67,10 @@ C:\Arduino-LMS-portable\
 └── arduino-home\
       ├── sketches\	
       │     ├── _tests\
-      │     │      ├── blink_test\
-      │     │      ├── lorawan_test\
-      │     │      └── uno_r4_wifi_test\
-      │     └── (vos futurs sketches ici)
+      │     │      ├── uno_avr_test\
+      │     │      ├── uno_r4_test\
+      │     │      └── ...
+      │     └── projets (vos futurs sketches ici)
       │
       ├── libraries\
 ```
@@ -92,8 +79,6 @@ C:\Arduino-LMS-portable\
 
 - Arduino AVR (`arduino:avr`)  
 - Arduino Renesas UNO (`arduino:renesas_uno`)  
-- Heltec ESP32 (`Heltec-esp32:esp32`)	(sauf version 'light')
-- Espressif ESP32 (`esp32:esp32`)		(sauf version 'light')
 
 
 ## BIBLIOTHÈQUES PRÉINSTALLÉES
@@ -125,18 +110,17 @@ Raccourci : **Ctrl + Shift + B**
 
 ## Pourquoi utiliser arduino-cli ?
 
-Les cores ESP32 pour Arduino sont très volumineux. 
+Initialement, parce que les cores ESP32 pour Arduino sont très volumineux. 
 Lors de la première compilation, l’outil doit construire l’intégralité du core (FreeRTOS, WiFi, Bluetooth, drivers, etc.). Cela peut prendre **jusqu’à 40 minutes** selon la machine.
 
-Bonne nouvelle : tous les fichiers compilés sont ensuite stockés dans le dossier `/build` du projet. Lors des compilations suivantes, Arduino réutilise ce cache 
-et ne recompile que le strict nécessaire.
+Bonne nouvelle : tous les fichiers compilés sont ensuite stockés dans le dossier `/build` du projet. Lors des compilations suivantes, Arduino réutilise ce cache et ne recompile que le strict nécessaire.
 
 Résultat → la seconde compilation prendra moins d'une minute.
 
 Conseil : ne supprimez pas le dossier `/build` si vous voulez conserver des compilations rapides.
 
-[Arduino-cli](https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 1.x et 2.x pour les cartes ESP32. 
-Après une première compilation longue (core ESP32 très volumineux), arduino-cli réutilise un cache local et réduit les compilations suivantes à moins d'une minute. L’environnement est portable, reproductible et fonctionne sans installation, ce qui est idéal pour un usage en classe ou sur des PC verrouillés.
+[Arduino-cli](https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 1.x et 2.x, surtout pour les cartes ESP32. 
+Après une première compilation longue, arduino-cli réutilise un cache local et réduit les compilations suivantes à moins d'une minute. L’environnement est portable, reproductible et fonctionne sans installation, ce qui est idéal pour un usage en classe ou sur des PC verrouillés.
 
 ## CONFIGURER LE PORT COM (OBLIGATOIRE AVANT UPLOAD)
 
@@ -233,10 +217,10 @@ Les sketches de test se trouvent dans :
 `C:\Arduino-LMS-portable\arduino-home\sketches\_tests\`
 
 Tests inclus :
-- `blink_test\`              → Test UNO  
-- `uno_r4_wifi_test\`        → Test UNO R4 WiFi  
-- `lorawan_test\`            → Test Heltec LoRa V3 (ne compilera pas avec la version 'light')
-- `esp32_test\`		   → Test ESP32 dev module (ne compilera pas avec la version 'light')
+- `uno_avr_test\`       → Test UNO  
+- `uno_r4_test\`        → Test UNO R4 WiFi  
+- `lorawan_test\`       → Test Heltec LoRa V3 (ne compilera pas avec la version 'light')
+- `esp32_test\`		    → Test ESP32 dev module (ne compilera pas avec la version 'light')
 
 ### Structure des sketches de test : .ino vide + code en .cpp
 
@@ -308,10 +292,10 @@ Ce projet a été créé pour permettre aux enseignants et aux élèves de trava
 
 ## CHANGELOG
 
-#### v1 — 2026‑06‑26
+#### v1 — 2026‑06‑26 (Obsolète)
 - Version initiale d'environnement portable Arduino/ESP32
 
-#### v1.0.1 — 2026-06-28
+#### v1.0.1 — 2026-06-28 (Obsolète)
 - Suppression de l’extension C/C++ de Microsoft
 - Amélioration de la portabilité
 - Aucun changement dans le fonctionnement du pack
@@ -324,6 +308,47 @@ Il suffit de supprimer l’extension C/C++ dans VS Code :
 4. Cliquer sur "Uninstall"
 
 Votre pack devient identique à la version 1.0.1.
+
+### Arduino LMS portable v1.1 light - 2026-06-30
+
+#### Deux nouvelles tâches disponibles dans Terminal -> Run task… :
+
+* Créer un projet UNO/Nano/Mega (AVR)
+* Créer un projet UNO R4 Minima/WiFi (Renesas)
+Dans les deux cas, le nom du projet est à renseigner
+Une fois créé, le projet de destination est dans C:\Arduino-LMS-portable\arduino-home\sketches\projets\<Nom du projet>
+
+Chaque projet est prêt à compiler et téléverser via les tâches Arduino habituelles.
+
+\---
+
+#### Améliorations techniques
+
+* Intégration de **Node.js portable** dans `tools/nodejs/` (aucune installation requise).
+* Script `copy-template.js` :
+
+  * Vérifie l’existence du dossier avant copie.
+  * Copie le template depuis `..\arduino-home\sketches\_tests` vers `..\arduino-home\sketches\projets`.
+  * Renomme automatiquement les fichiers `.ino` et `.cpp`.
+  * Affiche un message de confirmation dans le Terminal (mode `"reveal": "always"`).
+
+`text 
+Arduino-LMS-portable/
+├── arduino-cli/
+├── arduino-home/
+│    ├── sketches/
+│    │    ├── _tests/
+│    │    └── projets/
+├── tools/
+│    ├── nodejs/
+│    └── copy-template.js
+└── VSCode/
+└── data/user-data/User/tasks.json
+`
+
+**Fix**
+- Correction de l’apparition du sous‑menu "Continue without scanning the task output" lors de l’exécution des tâches VS Code (`problemMatcher: []` ajouté).
+
 
 #### v1.0.1 light - 2026-06-29
 - Version allégée (*light*) ne comprenant que les *cores* pour Arduino AVR (Uno/Nano/Mega) et Arduino Renesas (Unor R4 Minima/WiFi).
