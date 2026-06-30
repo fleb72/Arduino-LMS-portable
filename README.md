@@ -330,25 +330,10 @@ Chaque projet est prêt à compiler et téléverser via les tâches Arduino habi
 
 -  Intégration de **Node.js portable** dans `tools/nodejs/` (aucune installation requise).
 -  Script `copy-template.js` :
-
-  * Vérifie l’existence du dossier avant copie.
-  * Copie le template depuis `..\arduino-home\sketches\_tests` vers `..\arduino-home\sketches\projets`.
-  * Renomme automatiquement les fichiers `.ino` et `.cpp`.
-  * Affiche un message de confirmation dans le Terminal (mode `"reveal": "always"`).
-
-`text 
-Arduino-LMS-portable/
-├── arduino-cli/
-├── arduino-home/
-│    ├── sketches/
-│    │    ├── _tests/
-│    │    └── projets/
-├── tools/
-│    ├── nodejs/
-│    └── copy-template.js
-└── VSCode/
-└── data/user-data/User/tasks.json
-`
+  - Vérifie l’existence du dossier avant copie.
+  - Copie le template depuis `..\arduino-home\sketches\_tests` vers `..\arduino-home\sketches\projets`.
+  - Renomme automatiquement les fichiers `.ino` et `.cpp`.
+  - Affiche un message de confirmation dans le Terminal (mode `"reveal": "always"`).
 
 **Fix**
 - Correction de l’apparition du sous‑menu "Continue without scanning the task output" lors de l’exécution des tâches VS Code (`problemMatcher: []` ajouté).
