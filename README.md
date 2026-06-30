@@ -61,8 +61,8 @@ C:\Arduino-LMS-portable\
 │     └── data\
 │           └── packages\
 │                ├── arduino\              → Core UNO + UNO R4 WiFi
-│                ├── Heltec-esp32\         → Core Heltec WiFi LoRa 32 V3 (sauf version 'light')
-│                └── esp32\                → Core ESP32-WROOM / DevKitC (sauf version 'light')
+│                ├── Heltec-esp32\       → Core Heltec WiFi LoRa 32 V3 (core retiré dans la version light)
+│                └── esp32\                → Core ESP32 (core retiré dans la version light)
 │
 └── arduino-home\
       ├── sketches\	
@@ -119,7 +119,7 @@ Résultat → la seconde compilation prendra moins d'une minute.
 
 Conseil : ne supprimez pas le dossier `/build` si vous voulez conserver des compilations rapides.
 
-[Arduino-cli](https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 1.x et 2.x, surtout pour les cartes ESP32. 
+[Arduino-cli](https://docs.arduino.cc/arduino-cli/) a été choisi, car il offre une expérience plus rapide et plus fiable que l’IDE Arduino 1.x et 2.x (surtout pour les cartes ESP32, si vous ajoutez les *cores* plus tard...) 
 Après une première compilation longue, arduino-cli réutilise un cache local et réduit les compilations suivantes à moins d'une minute. L’environnement est portable, reproductible et fonctionne sans installation, ce qui est idéal pour un usage en classe ou sur des PC verrouillés.
 
 ## CONFIGURER LE PORT COM (OBLIGATOIRE AVANT UPLOAD)
