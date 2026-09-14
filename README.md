@@ -10,6 +10,11 @@ Le lien vers le fichier complet (archive `.7z`) est disponible dans la section *
 
 Seule la **dernière version** est conservée sur le serveur (espace limité).
 
+## 📘 Documentation détaillée
+
+👉 [Consulter la documentation complète (PDF)](documentation-Arduino-LMS-Portable-v1.1-light.pdf)
+
+
 ## IMPORTANT — INSTALLATION
 Arduino LMS portable ~~existe maintenant en deux variantes~~ est désormais proposé uniquement en **version light**, optimisée pour les usages pédagogiques en lycée.
 
