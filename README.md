@@ -39,7 +39,7 @@ Une fois copié à cet emplacement, tout fonctionne immédiatement.
 
 ## LANCER L’ENVIRONNEMENT (IMPORTANT)
 
-Cet environnement utilise **une version portable de [VS Code](https://code.visualstudio.com/Download)** (v1.125.0), déjà configurée pour Arduino CLI.
+Cet environnement utilise **une version portable de [VS Code](https://code.visualstudio.com/Download)**, déjà configurée pour Arduino CLI.
 
 Vous devez OBLIGATOIREMENT lancer VS Code via :
 `C:\Arduino-LMS-portable\code.exe - Raccourci`
@@ -339,3 +339,8 @@ Chaque projet est prêt à compiler et téléverser via les tâches Arduino habi
 **Fix**
 - Correction de l’apparition du sous‑menu "Continue without scanning the task output" lors de l’exécution des tâches VS Code (`problemMatcher: []` ajouté).
 
+#### v1.2 light - 2026-09-13
+
+- VScode 1.136.2
+- Réduction des suggestions d'extensions, et de mise à jour d'extensions (voir `C:\Arduino-LMS-portable\VSCode\data\user-data\User\settings.json`)
+- Fixes #1
