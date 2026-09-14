@@ -2,6 +2,15 @@
 
 Environnement Arduino **entièrement portable**, avec VSCode et Arduino-CLI.
 
+> ⚠️ **Annonce importante — Migration vers VSCodium (version 2.0)**
+> Le projet Arduino-LMS-portable abandonnera VS Code à partir de la version 2.0.
+> 
+> Motif : amélioration de la portabilité, suppression des dépendances Microsoft,
+> réduction des suggestions d’extensions et meilleure stabilité en environnement scolaire.
+>
+> La version 1.x reste disponible jusqu’à la publication de la 2.0.
+
+
 ## 📦 Téléchargement de l’environnement portable
 
 Le lien vers le fichier complet (archive `.7z`) est disponible dans la section **Releases** du dépôt :
